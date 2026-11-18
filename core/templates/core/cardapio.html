@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marmitaria Tempero Caseiro</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #F5F5F5; color: #1A1A1A; margin: 0; }
+    header { background: #1E242B; color: #FFFFFF; padding: 16px; }
+    .card { background: #FFFFFF; border: 1px solid #CCCCCC; border-radius: 8px; padding: 16px; margin: 12px; }
+    .btn-primary { display: inline-block; min-height: 44px; min-width: 44px; width: 100%; background: #B80000; color: #FFFFFF; font-size: 16px; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Marmitaria Tempero Caseiro</h1>
+    <p>Atendimento: 11h às 13h</p>
+  </header>
+  <main>
+    {% for item in itens %}
+    <article class="card">
+      <h2>{{ item.nome_prato }}</h2>
+      <p>{{ item.descricao_acompanhamentos }}</p>
+      <p><strong>P:</strong> R$ {{ item.preco_p }} | <strong>M:</strong> R$ {{ item.preco_m }} | <strong>G:</strong> R$ {{ item.preco_g }}</p>
+      <a href="#pedido-{{ item.id }}"><button type="button" class="btn-primary">Fazer Pedido</button></a>
+    </article>
+    {% endfor %}
+  </main>
+</body>
+</html>
