@@ -20,3 +20,8 @@ Aplicação web responsiva (*mobile-first*) desenvolvida para otimizar o atendim
 - Autenticação administrativa com hash **PBKDF2-SHA256** (`django.contrib.auth`).
 - Proteção nativa contra **SQL Injection** (Django ORM parametrizado), **XSS** (auto-escape em templates) e **CSRF**.
 - Credenciais isoladas em variáveis de ambiente (`.env`).
+## Instruções de Execução Local
+1. Clone o repositório: `git clone https://github.com/LMello77/marmitaria-tempero-caseiro-mvp.git`
+2. Instale as dependências: `pip install django psycopg[binary]`
+3. Configure as variáveis de ambiente (`SECRET_KEY` e `DATABASE_URL` do PostgreSQL/Supabase)
+4. Execute as migrações e inicie o servidor: `python manage.py migrate && python manage.py runserver`
